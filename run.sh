@@ -1,6 +1,7 @@
 #compile:
 ./configure \
-    --add-module=addon/mytest
+    --add-module=addon/mytest \
+    --add-module=addon/mytest2 \
 
 #make:
 make
@@ -20,6 +21,7 @@ ps -ef | grep `cat logs/nginx.pid`
 
 #Test mytest module
 curl http://localhost:8501/hhh
+curl http://localhost:8501/222
 
 
 #Stop Nginx:
