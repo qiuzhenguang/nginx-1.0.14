@@ -1,5 +1,6 @@
 #compile:
-./configure
+./configure \
+    --add-module=addon/mytest
 
 #make:
 make
@@ -16,6 +17,10 @@ touch logs/error.log
 #Run Nginx:
 ./objs/nginx -c conf/nginx.conf -p .
 ps -ef | grep `cat logs/nginx.pid`
+
+#Test mytest module
+curl http://localhost:8501/hhh
+
 
 #Stop Nginx:
 ./objs/nginx -s stop -c conf/nginx.conf -p .
