@@ -3,6 +3,7 @@
     --without-http_rewrite_module \
     --add-module=addon/mytest \
     --add-module=addon/mytest2 \
+    --add-module=addon/mytest3 \
 
 #make:
 make
@@ -27,3 +28,6 @@ curl http://localhost:8501/222
 
 #Stop Nginx:
 ./objs/nginx -s stop -c conf/nginx.conf -p .
+
+#create ctags
+#../ctags/ctags-5.8/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . 
