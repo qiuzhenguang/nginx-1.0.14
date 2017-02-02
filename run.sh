@@ -1,5 +1,6 @@
 #compile:
 ./configure \
+    --without-http_rewrite_module \
     --add-module=addon/mytest \
     --add-module=addon/mytest2 \
 
