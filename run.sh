@@ -4,6 +4,9 @@
     --add-module=addon/mytest \
     --add-module=addon/mytest2 \
     --add-module=addon/mytest3 \
+    --with-debug \
+
+sed -i "s/FLAGS =  -pipe  -O/FLAGS =  -pipe /g" ./objs/Makefile
 
 #make:
 make
