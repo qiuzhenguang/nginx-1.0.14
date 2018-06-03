@@ -16,6 +16,9 @@ sed -i "s/listen       80;/listen       8501;/g" ./conf/nginx.conf
 mkdir logs
 touch logs/error.log
 
+cp objs/*.c src/
+cp objs/*.h src/
+
 #run:
 #Test nginx.conf:
 ./objs/nginx -t -c conf/nginx.conf -p .
@@ -34,3 +37,5 @@ curl http://localhost:8501/222
 
 #create ctags
 #../ctags/ctags-5.8/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . 
+
+
